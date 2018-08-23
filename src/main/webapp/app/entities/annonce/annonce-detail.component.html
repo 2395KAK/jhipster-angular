@@ -1,0 +1,43 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="annonce">
+            <h2><span jhiTranslate="lbchApp.annonce.detail.title">Annonce</span> {{annonce.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="lbchApp.annonce.titre">Titre</span></dt>
+                <dd>
+                    <span>{{annonce.titre}}</span>
+                </dd>
+                <dt><span jhiTranslate="lbchApp.annonce.description">Description</span></dt>
+                <dd>
+                    <span>{{annonce.description}}</span>
+                </dd>
+                <dt><span jhiTranslate="lbchApp.annonce.prix">Prix</span></dt>
+                <dd>
+                    <span>{{annonce.prix}}</span>
+                </dd>
+                <dt><span jhiTranslate="lbchApp.annonce.categorie">Categorie</span></dt>
+                <dd>
+                    <span>{{annonce.categorie}}</span>
+                </dd>
+                <dt><span jhiTranslate="lbchApp.annonce.proprietaire">Proprietaire</span></dt>
+                <dd>
+                    <span>{{annonce.proprietaire}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/annonce', annonce.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,7 @@
+entity Annonce {
+	titre String,
+    description String,
+    prix Long,
+    categorie Long,
+    proprietaire String
+}
